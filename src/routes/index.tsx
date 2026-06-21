@@ -25,7 +25,7 @@ const faqs = [
   { q: "Mohu vyhrát reálné peníze?", a: "Ne. Virtuální mince nemají peněžní hodnotu a nelze je vyměnit za peníze, zboží ani služby." },
   { q: "Jak získat další mince?", a: "Stiskněte tlačítko +500 zdarma v herní obrazovce nebo se zaregistrujte pro uložení pokroku." },
   { q: "Co dělat, když hra nefunguje?", a: "Obnovte stránku, vyzkoušejte jiný prohlížeč nebo nás kontaktujte přes formulář v sekci Kontakt." },
-  { q: "Jak obnovit účet?", a: "Použijte funkci „Zapomenuté heslo" na přihlašovací obrazovce nebo nás kontaktujte." },
+  { q: "Jak obnovit účet?", a: "Použijte funkci „Zapomenuté heslo“ na přihlašovací obrazovce nebo nás kontaktujte." },
 ];
 
 function Faq() {

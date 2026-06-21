@@ -83,10 +83,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Hrajte zdarma cirkusový slot Cirkusová štěstěna. Bez vkladů, bez výher reálných peněz — jen zábava a virtuální mince." },
       { name: "author", content: "Cirkusová štěstěna" },
       { property: "og:title", content: "Cirkusová štěstěna — Sociální kasino zdarma" },
-      { property: "og:description", content: "Točte válce pod cirkusovým stanem. Hrajte zdarma s virtuálními mincemi." },
+      { property: "og:description", content: "Hrajte zdarma cirkusový slot Cirkusová štěstěna. Bez vkladů, bez výher reálných peněz — jen zábava a virtuální mince." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Cirkusová štěstěna — Sociální kasino zdarma" },
+      { name: "twitter:description", content: "Hrajte zdarma cirkusový slot Cirkusová štěstěna. Bez vkladů, bez výher reálných peněz — jen zábava a virtuální mince." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9c676c6e-6999-46e6-9c17-1b14393bf57f/id-preview-70cea46c--143cf9ae-9485-412c-8387-86eab6a34708.lovable.app-1782043480734.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9c676c6e-6999-46e6-9c17-1b14393bf57f/id-preview-70cea46c--143cf9ae-9485-412c-8387-86eab6a34708.lovable.app-1782043480734.png" },
     ],
     links: [
       {

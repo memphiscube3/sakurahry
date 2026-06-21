@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InfoPage } from "@/components/info-page";
 
 export const Route = createFileRoute("/ochrana-osobnich-udaju")({
-  head: () => ({ meta: [{ title: "Ochrana osobních údajů — Cirkusová štěstěna" }] }),
+  head: () => ({ meta: [{ title: "Ochrana osobních údajů — Kasino Sakura" }] }),
   component: () => (
     <InfoPage title="Ochrana osobních údajů">
       <p>Vážíme si vašeho soukromí. Tento dokument popisuje, jaká data zpracováváme a proč.</p>
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/ochrana-osobnich-udaju")({
       <h2>K jakému účelu</h2>
       <p>Údaje slouží výhradně k provozu hry, uložení vašeho pokroku a zlepšování služby.</p>
       <h2>Vaše práva</h2>
-      <p>Máte právo na přístup, opravu i vymazání svých údajů. Kontaktujte nás na support@cirkusova-stestena.cz.</p>
+      <p>Máte právo na přístup, opravu i vymazání svých údajů. Kontaktujte nás na support@sakuraova-stestena.cz.</p>
       <h2>Sdílení s třetími stranami</h2>
       <p>Vaše osobní údaje neprodáváme. Sdílíme je pouze s poskytovateli nezbytné infrastruktury (hosting, databáze).</p>
     </InfoPage>

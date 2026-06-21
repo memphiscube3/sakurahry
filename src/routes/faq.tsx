@@ -11,7 +11,7 @@ const items: [string, string][] = [
 ];
 
 export const Route = createFileRoute("/faq")({
-  head: () => ({ meta: [{ title: "FAQ — Cirkusová štěstěna" }, { name: "description", content: "Časté otázky o sociálním kasinu Cirkusová štěstěna." }] }),
+  head: () => ({ meta: [{ title: "FAQ — Kasino Sakura" }, { name: "description", content: "Časté otázky o sociálním kasinu Kasino Sakura." }] }),
   component: () => (
     <InfoPage title="Časté otázky">
       {items.map(([q, a]) => (

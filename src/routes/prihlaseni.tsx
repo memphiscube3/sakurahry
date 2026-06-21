@@ -8,7 +8,7 @@ import { useAuth } from "@/hooks/use-auth";
 export const Route = createFileRoute("/prihlaseni")({
   head: () => ({
     meta: [
-      { title: "Přihlášení / Registrace — Cirkusová štěstěna" },
+      { title: "Přihlášení / Registrace — Kasino Sakura" },
       { name: "description", content: "Přihlaste se nebo si vytvořte účet a uložte si pokrok ve hře." },
     ],
   }),

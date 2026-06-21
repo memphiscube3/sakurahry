@@ -10,10 +10,10 @@ import { useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Cirkusová štěstěna — Hrajte cirkusový slot zdarma" },
-      { name: "description", content: "Sociální kasino v cirkusovém stylu. Točte válce, sbírejte virtuální mince a bavte se zdarma." },
-      { property: "og:title", content: "Cirkusová štěstěna — Sociální kasino" },
-      { property: "og:description", content: "Točte válce pod cirkusovým stanem. Hrajte zdarma." },
+      { title: "Kasino Sakura — Hrajte japonský slot zdarma" },
+      { name: "description", content: "Sociální kasino v japonském stylu. Točte válce, sbírejte virtuální mince a bavte se zdarma." },
+      { property: "og:title", content: "Kasino Sakura — Sociální kasino" },
+      { property: "og:description", content: "Točte válce pod japonskou pagodou. Hrajte zdarma." },
     ],
   }),
   component: Index,
@@ -56,8 +56,8 @@ function Index() {
         </div>
         <div className="max-w-7xl mx-auto px-4 pt-12 pb-16 sm:pt-20 sm:pb-24 grid lg:grid-cols-2 gap-10 items-center">
           <div className="text-center lg:text-left">
-            <img src={logo} alt="Cirkusová štěstěna" className="mx-auto lg:mx-0 max-w-md w-full h-auto mb-6 drop-shadow-[0_0_30px_oklch(0.78_0.16_75/0.5)]" />
-            <p className="text-lg sm:text-xl text-[oklch(0.92_0.04_85)] mb-2 font-medium">Vítejte v cirkusovém kasinu zdarma</p>
+            <img src={logo} alt="Kasino Sakura" className="mx-auto lg:mx-0 max-w-md w-full h-auto mb-6 drop-shadow-[0_0_30px_oklch(0.78_0.16_75/0.5)]" />
+            <p className="text-lg sm:text-xl text-[oklch(0.92_0.04_85)] mb-2 font-medium">Vítejte v japonském kasinu zdarma</p>
             <p className="text-sm text-[oklch(0.8_0.04_75)] mb-8 max-w-lg mx-auto lg:mx-0">
               Točte válce s ohnivými lvy, jokerymi a kouzelnými truhlami. Žádné vklady, žádné výhry v penězích — jen čistá radost ze hry.
             </p>
@@ -84,13 +84,13 @@ function Index() {
 
       {/* FEATURES */}
       <section className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-3xl sm:text-4xl text-center text-gold mb-12">Proč Cirkusová štěstěna</h2>
+        <h2 className="text-3xl sm:text-4xl text-center text-gold mb-12">Proč Kasino Sakura</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {[
             { icon: Coins, t: "Zcela zdarma", d: "Žádné vklady, žádné mikrotransakce. Hrajte tak dlouho, jak chcete." },
             { icon: Shield, t: "Bezpečné", d: "Sociální kasino bez reálných peněz. Pouze virtuální mince pro zábavu." },
             { icon: Trophy, t: "Ukládání pokroku", d: "Zaregistrujte se a vaše mince, výhry a historie zůstanou s vámi." },
-            { icon: Sparkles, t: "Cirkusová atmosféra", d: "Unikátní design, ohnivé symboly a dramatické animace." },
+            { icon: Sparkles, t: "Japonská atmosféra", d: "Unikátní design, ohnivé symboly a dramatické animace." },
           ].map((f, i) => (
             <div key={i} className="rounded-2xl p-6 bg-[oklch(0.22_0.06_25)] border border-[oklch(0.78_0.16_75/0.3)] hover:border-[oklch(0.78_0.16_75/0.7)] transition">
               <div className="w-12 h-12 rounded-full bg-gold-grad flex items-center justify-center mb-4">
@@ -109,7 +109,7 @@ function Index() {
         <div className="grid md:grid-cols-3 gap-6">
           {[
             { n: "01", t: "Nastavte sázku", d: "Vyberte velikost sázky pomocí tlačítek + a −. Sázka se odečte z vašich virtuálních mincí." },
-            { n: "02", t: "Stiskněte Točit", d: "Tři válce se roztočí pod cirkusovým stanem. Sledujte, jak se zastavují jeden po druhém." },
+            { n: "02", t: "Stiskněte Točit", d: "Tři válce se roztočí pod japonskou pagodou. Sledujte, jak se zastavují jeden po druhém." },
             { n: "03", t: "Vyhrávejte mince", d: "Tři stejné symboly přinesou velkou výhru podle tabulky výplat. Dva stejné menší." },
           ].map((s) => (
             <div key={s.n} className="rounded-2xl p-6 bg-gradient-to-br from-[oklch(0.28_0.12_25)] to-[oklch(0.18_0.06_25)] border border-[oklch(0.78_0.16_75/0.4)] relative overflow-hidden">
@@ -138,7 +138,7 @@ function Index() {
       <section className="max-w-5xl mx-auto px-4 pb-16">
         <div className="rounded-2xl bg-[oklch(0.22_0.06_25)] border border-[oklch(0.55_0.22_30/0.5)] p-6 text-center">
           <p className="text-sm text-[oklch(0.9_0.04_75)] leading-relaxed">
-            <strong className="text-gold">Důležité upozornění:</strong> Cirkusová štěstěna je sociální kasino a není hazardní hrou o reálné peníze.
+            <strong className="text-gold">Důležité upozornění:</strong> Kasino Sakura je sociální kasino a není hazardní hrou o reálné peníze.
             Veškeré virtuální mince nemají peněžní hodnotu a nelze je vyměnit za peníze, zboží ani služby. Hra je určena pouze pro osoby starší 18 let.
           </p>
         </div>

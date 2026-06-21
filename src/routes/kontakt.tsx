@@ -4,7 +4,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/kontakt")({
-  head: () => ({ meta: [{ title: "Kontakt — Cirkusová štěstěna" }, { name: "description", content: "Kontaktujte podporu Cirkusové štěstěny." }] }),
+  head: () => ({ meta: [{ title: "Kontakt — Kasino Sakura" }, { name: "description", content: "Kontaktujte podporu Sakuraové štěstěny." }] }),
   component: ContactPage,
 });
 
@@ -21,7 +21,7 @@ function ContactPage() {
     <InfoPage title="Kontakt">
       <p>
         Potřebujete pomoc? Napište nám na{" "}
-        <a href="mailto:support@cirkusova-stestena.cz">support@cirkusova-stestena.cz</a>.
+        <a href="mailto:support@sakuraova-stestena.cz">support@sakuraova-stestena.cz</a>.
         Odpovídáme zpravidla do <strong>24–48 hodin</strong>.
       </p>
       <form onSubmit={submit} className="space-y-4 mt-6 not-prose">

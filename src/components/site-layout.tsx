@@ -26,7 +26,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-40 backdrop-blur-md bg-[oklch(0.17_0.06_25/0.85)] border-b border-[oklch(0.78_0.16_75/0.25)]">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Cirkusová štěstěna" className="h-12 w-auto drop-shadow-[0_0_10px_oklch(0.78_0.16_75/0.4)]" />
+            <img src={logo} alt="Kasino Sakura" className="h-12 w-auto drop-shadow-[0_0_10px_oklch(0.78_0.16_75/0.4)]" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
@@ -130,7 +130,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         </div>
         <div className="border-t border-[oklch(0.78_0.16_75/0.15)] py-5 text-center text-xs text-[oklch(0.7_0.04_75)] px-4">
           <p className="mb-1">⚠ Hra je určena pouze pro osoby starší 18 let.</p>
-          <p>© {new Date().getFullYear()} Cirkusová štěstěna — Sociální kasino. Virtuální mince nemají peněžní hodnotu.</p>
+          <p>© {new Date().getFullYear()} Kasino Sakura — Sociální kasino. Virtuální mince nemají peněžní hodnotu.</p>
         </div>
       </footer>
     </div>

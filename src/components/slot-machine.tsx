@@ -188,7 +188,7 @@ export function SlotMachine() {
             {reels.map((s, i) => (
               <div
                 key={i}
-                className={`aspect-square rounded-xl bg-gradient-to-b from-[oklch(0.95_0.04_85)] to-[oklch(0.75_0.08_75)] flex items-center justify-center p-2 sm:p-4 overflow-hidden border-2 border-[oklch(0.5_0.12_55)] ${
+                className={`aspect-square rounded-xl bg-gradient-to-b from-[oklch(0.35_0.18_310)] to-[oklch(0.22_0.12_300)] flex items-center justify-center p-2 sm:p-4 overflow-hidden border-2 border-[oklch(0.65_0.22_340/0.7)] ${
                   spinning ? "" : "animate-coin-pop"
                 }`}
               >
@@ -228,7 +228,7 @@ export function SlotMachine() {
             <button
               onClick={spin}
               disabled={spinning || coins < bet}
-              className="relative px-10 py-4 rounded-xl bg-gold-grad text-[oklch(0.22_0.1_300)] text-lg uppercase tracking-widest font-extrabold shadow-gold disabled:opacity-50 hover:brightness-110 active:scale-95 transition border-2 border-[oklch(0.5_0.12_55)]"
+              className="relative px-10 py-4 rounded-xl bg-gold-grad text-[oklch(0.22_0.1_300)] text-lg uppercase tracking-widest font-extrabold shadow-gold disabled:opacity-50 hover:brightness-110 active:scale-95 transition border-2 border-[oklch(0.6_0.22_340)]"
             >
               {spinning ? "Točím…" : "Točit"}
             </button>

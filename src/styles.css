@@ -153,14 +153,14 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: 'Cinzel', Georgia, serif;
+    font-family: 'Noto Serif JP', 'Cinzel', Georgia, serif;
     background-image:
-      radial-gradient(ellipse at top, oklch(0.3 0.12 25 / 0.6), transparent 60%),
-      radial-gradient(ellipse at bottom, oklch(0.25 0.1 25 / 0.4), transparent 60%);
+      radial-gradient(ellipse at top, oklch(0.4 0.18 310 / 0.55), transparent 60%),
+      radial-gradient(ellipse at bottom, oklch(0.3 0.14 340 / 0.35), transparent 60%);
     background-attachment: fixed;
   }
   h1, h2, h3, h4 {
-    font-family: 'Cinzel Decorative', 'Cinzel', serif;
+    font-family: 'Yuji Mai', 'Cinzel Decorative', serif;
     letter-spacing: 0.02em;
   }
 }
@@ -176,15 +176,17 @@
   .bg-gold-grad { background: var(--gradient-gold); }
   .shadow-gold { box-shadow: var(--shadow-gold); }
   .border-gold { border-color: var(--gold); }
+  .bg-sakura-grad { background: var(--gradient-sakura); }
+  .shadow-sakura { box-shadow: var(--shadow-sakura); }
   .ring-bulbs {
-    background-image: radial-gradient(circle, oklch(0.92 0.15 85) 0%, oklch(0.78 0.18 65) 40%, transparent 70%);
+    background-image: radial-gradient(circle, oklch(0.85 0.18 350) 0%, oklch(0.65 0.22 340) 40%, transparent 70%);
     background-size: 18px 18px;
     background-repeat: repeat-x;
     background-position: center;
   }
   @keyframes bulb-blink {
-    0%, 100% { opacity: 1; filter: drop-shadow(0 0 6px oklch(0.92 0.18 85)); }
-    50% { opacity: 0.55; filter: drop-shadow(0 0 2px oklch(0.7 0.14 70)); }
+    0%, 100% { opacity: 1; filter: drop-shadow(0 0 6px oklch(0.85 0.2 350)); }
+    50% { opacity: 0.55; filter: drop-shadow(0 0 2px oklch(0.6 0.18 340)); }
   }
   .animate-bulb { animation: bulb-blink 1.6s ease-in-out infinite; }
   @keyframes spin-reel {

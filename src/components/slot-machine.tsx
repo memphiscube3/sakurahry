@@ -1,26 +1,26 @@
 import { useEffect, useRef, useState } from "react";
-import symStar from "@/assets/sym-star.png";
-import symTent from "@/assets/sym-tent.png";
-import symHat from "@/assets/sym-hat.png";
-import symHorse from "@/assets/sym-horse.png";
-import symChest from "@/assets/sym-chest.png";
-import symLion from "@/assets/sym-lion.png";
-import symJoker from "@/assets/sym-joker.png";
+import symOni from "@/assets/sym-oni.png";
+import symKoi from "@/assets/sym-koi.png";
+import symCat from "@/assets/sym-cat.png";
+import symDaruma from "@/assets/sym-daruma.png";
+import symSushi from "@/assets/sym-sushi.png";
+import symLantern from "@/assets/sym-lantern.png";
+import symCoin from "@/assets/sym-coin.png";
 import { Coins, Minus, Plus } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
-export type SymbolKey = "star" | "tent" | "hat" | "horse" | "chest" | "lion" | "joker";
+export type SymbolKey = "sushi" | "lantern" | "daruma" | "koi" | "cat" | "oni" | "coin";
 
 const SYMBOLS: { key: SymbolKey; img: string; mult: number; weight: number; name: string }[] = [
-  { key: "star", img: symStar, mult: 5, weight: 14, name: "Hvězda" },
-  { key: "tent", img: symTent, mult: 8, weight: 12, name: "Stan" },
-  { key: "hat", img: symHat, mult: 10, weight: 10, name: "Klobouk" },
-  { key: "horse", img: symHorse, mult: 15, weight: 8, name: "Kůň" },
-  { key: "lion", img: symLion, mult: 25, weight: 6, name: "Lev" },
-  { key: "joker", img: symJoker, mult: 50, weight: 3, name: "Joker" },
-  { key: "chest", img: symChest, mult: 100, weight: 2, name: "Truhla" },
+  { key: "sushi", img: symSushi, mult: 5, weight: 14, name: "Sushi" },
+  { key: "lantern", img: symLantern, mult: 8, weight: 12, name: "Lampion" },
+  { key: "daruma", img: symDaruma, mult: 10, weight: 10, name: "Daruma" },
+  { key: "koi", img: symKoi, mult: 15, weight: 8, name: "Koi" },
+  { key: "cat", img: symCat, mult: 25, weight: 6, name: "Maneki" },
+  { key: "oni", img: symOni, mult: 50, weight: 3, name: "Oni" },
+  { key: "coin", img: symCoin, mult: 100, weight: 2, name: "Sakura mince" },
 ];
 
 const TOTAL_WEIGHT = SYMBOLS.reduce((s, x) => s + x.weight, 0);

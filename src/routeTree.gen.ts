@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ZodpovednaHraRouteImport } from './routes/zodpovedna-hra'
 import { Route as SmazaniUctuRouteImport } from './routes/smazani-uctu'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProfilRouteImport } from './routes/profil'
 import { Route as PrihlaseniRouteImport } from './routes/prihlaseni'
 import { Route as PodminkyRouteImport } from './routes/podminky'
@@ -30,6 +31,11 @@ const ZodpovednaHraRoute = ZodpovednaHraRouteImport.update({
 const SmazaniUctuRoute = SmazaniUctuRouteImport.update({
   id: '/smazani-uctu',
   path: '/smazani-uctu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProfilRoute = ProfilRouteImport.update({
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/podminky': typeof PodminkyRoute
   '/prihlaseni': typeof PrihlaseniRoute
   '/profil': typeof ProfilRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/smazani-uctu': typeof SmazaniUctuRoute
   '/zodpovedna-hra': typeof ZodpovednaHraRoute
 }
@@ -108,6 +115,7 @@ export interface FileRoutesByTo {
   '/podminky': typeof PodminkyRoute
   '/prihlaseni': typeof PrihlaseniRoute
   '/profil': typeof ProfilRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/smazani-uctu': typeof SmazaniUctuRoute
   '/zodpovedna-hra': typeof ZodpovednaHraRoute
 }
@@ -123,6 +131,7 @@ export interface FileRoutesById {
   '/podminky': typeof PodminkyRoute
   '/prihlaseni': typeof PrihlaseniRoute
   '/profil': typeof ProfilRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/smazani-uctu': typeof SmazaniUctuRoute
   '/zodpovedna-hra': typeof ZodpovednaHraRoute
 }
@@ -139,6 +148,7 @@ export interface FileRouteTypes {
     | '/podminky'
     | '/prihlaseni'
     | '/profil'
+    | '/sitemap.xml'
     | '/smazani-uctu'
     | '/zodpovedna-hra'
   fileRoutesByTo: FileRoutesByTo
@@ -153,6 +163,7 @@ export interface FileRouteTypes {
     | '/podminky'
     | '/prihlaseni'
     | '/profil'
+    | '/sitemap.xml'
     | '/smazani-uctu'
     | '/zodpovedna-hra'
   id:
@@ -167,6 +178,7 @@ export interface FileRouteTypes {
     | '/podminky'
     | '/prihlaseni'
     | '/profil'
+    | '/sitemap.xml'
     | '/smazani-uctu'
     | '/zodpovedna-hra'
   fileRoutesById: FileRoutesById
@@ -182,6 +194,7 @@ export interface RootRouteChildren {
   PodminkyRoute: typeof PodminkyRoute
   PrihlaseniRoute: typeof PrihlaseniRoute
   ProfilRoute: typeof ProfilRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SmazaniUctuRoute: typeof SmazaniUctuRoute
   ZodpovednaHraRoute: typeof ZodpovednaHraRoute
 }
@@ -200,6 +213,13 @@ declare module '@tanstack/react-router' {
       path: '/smazani-uctu'
       fullPath: '/smazani-uctu'
       preLoaderRoute: typeof SmazaniUctuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/profil': {
@@ -286,6 +306,7 @@ const rootRouteChildren: RootRouteChildren = {
   PodminkyRoute: PodminkyRoute,
   PrihlaseniRoute: PrihlaseniRoute,
   ProfilRoute: ProfilRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SmazaniUctuRoute: SmazaniUctuRoute,
   ZodpovednaHraRoute: ZodpovednaHraRoute,
 }

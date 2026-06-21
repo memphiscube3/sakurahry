@@ -169,7 +169,7 @@ function Profile() {
               <div
                 key={a.t}
                 className={`rounded-xl p-4 border flex items-center gap-3 ${
-                  a.got ? "bg-[oklch(0.28_0.14_70/0.3)] border-[oklch(0.78_0.16_75/0.6)]" : "bg-[oklch(0.2_0.04_25)] border-[oklch(0.4_0.05_25)] opacity-60"
+                  a.got ? "bg-[oklch(0.28_0.14_70/0.3)] border-[oklch(0.78_0.16_75/0.6)]" : "bg-[oklch(0.22_0.08_300)] border-[oklch(0.4_0.1_320)] opacity-60"
                 }`}
               >
                 <Trophy className={`h-6 w-6 ${a.got ? "text-[oklch(0.88_0.16_85)]" : "text-[oklch(0.5_0.04_75)]"}`} />
@@ -187,7 +187,7 @@ function Profile() {
             <hr className="border-[oklch(0.78_0.16_75/0.2)]" />
             <h3 className="text-[oklch(0.95_0.04_85)] font-semibold">Smazat účet</h3>
             <p className="text-sm text-[oklch(0.8_0.04_75)]">Trvalé smazání účtu a všech dat. Akce je nevratná.</p>
-            <button onClick={deleteAccount} className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[oklch(0.62_0.24_340)] hover:bg-[oklch(0.5_0.22_25)] text-[oklch(0.98_0.02_85)] font-semibold">
+            <button onClick={deleteAccount} className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[oklch(0.62_0.24_340)] hover:bg-[oklch(0.55_0.22_340)] text-[oklch(0.98_0.02_85)] font-semibold">
               <Trash2 className="h-4 w-4" /> Smazat účet
             </button>
           </div>

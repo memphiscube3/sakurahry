@@ -61,7 +61,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             ) : (
               <Link
                 to="/prihlaseni"
-                className="hidden sm:inline-flex px-4 py-2 rounded-md bg-gold-grad text-[oklch(0.2_0.05_25)] text-sm font-bold shadow-gold hover:brightness-110 transition"
+                className="hidden sm:inline-flex px-4 py-2 rounded-md bg-gold-grad text-[oklch(0.2_0.08_300)] text-sm font-bold shadow-gold hover:brightness-110 transition"
               >
                 Přihlásit
               </Link>

@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import symOni from "@/assets/sym-oni.png";
 import symKoi from "@/assets/sym-koi.png";
-import symCat from "@/assets/sym-cat.png";
-import symDaruma from "@/assets/sym-daruma.png";
-import symSushi from "@/assets/sym-sushi.png";
+import symTorii from "@/assets/sym-torii.png";
+import symWagasa from "@/assets/sym-wagasa.png";
+import symCrane from "@/assets/sym-crane.png";
 import symLantern from "@/assets/sym-lantern.png";
-import symCoin from "@/assets/sym-coin.png";
+import symLotus from "@/assets/sym-lotus.png";
 import { Coins, Minus, Plus } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/integrations/supabase/client";

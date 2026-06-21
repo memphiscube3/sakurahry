@@ -11,16 +11,16 @@ import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
-export type SymbolKey = "sushi" | "lantern" | "daruma" | "koi" | "cat" | "oni" | "coin";
+export type SymbolKey = "oni" | "koi" | "torii" | "wagasa" | "crane" | "lantern" | "lotus";
 
 const SYMBOLS: { key: SymbolKey; img: string; mult: number; weight: number; name: string }[] = [
-  { key: "sushi", img: symSushi, mult: 5, weight: 14, name: "Sushi" },
+  { key: "torii", img: symTorii, mult: 5, weight: 14, name: "Torii" },
   { key: "lantern", img: symLantern, mult: 8, weight: 12, name: "Lampion" },
-  { key: "daruma", img: symDaruma, mult: 10, weight: 10, name: "Daruma" },
+  { key: "wagasa", img: symWagasa, mult: 10, weight: 10, name: "Wagasa" },
   { key: "koi", img: symKoi, mult: 15, weight: 8, name: "Koi" },
-  { key: "cat", img: symCat, mult: 25, weight: 6, name: "Maneki" },
+  { key: "crane", img: symCrane, mult: 25, weight: 6, name: "Jeřáb" },
   { key: "oni", img: symOni, mult: 50, weight: 3, name: "Oni" },
-  { key: "coin", img: symCoin, mult: 100, weight: 2, name: "Sakura mince" },
+  { key: "lotus", img: symLotus, mult: 100, weight: 2, name: "Lotos" },
 ];
 
 const TOTAL_WEIGHT = SYMBOLS.reduce((s, x) => s + x.weight, 0);

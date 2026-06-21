@@ -8,7 +8,7 @@ import { useAuth } from "@/hooks/use-auth";
 export const Route = createFileRoute("/prihlaseni")({
   head: () => ({
     meta: [
-      { title: "Přihlášení / Registrace — Cirkusová štěstěna" },
+      { title: "Přihlášení / Registrace — Kasino Sakura" },
       { name: "description", content: "Přihlaste se nebo si vytvořte účet a uložte si pokrok ve hře." },
     ],
   }),
@@ -70,12 +70,12 @@ function AuthPage() {
   return (
     <SiteLayout>
       <div className="max-w-md mx-auto px-4 py-16">
-        <div className="rounded-2xl bg-[oklch(0.22_0.06_25)] border border-[oklch(0.78_0.16_75/0.4)] p-8 shadow-gold">
+        <div className="rounded-2xl bg-[oklch(0.24_0.1_300)] border border-[oklch(0.78_0.16_75/0.4)] p-8 shadow-gold">
           <div className="flex gap-2 mb-6 p-1 rounded-lg bg-black/40">
             <button
               onClick={() => setMode("login")}
               className={`flex-1 py-2 rounded-md text-sm font-semibold uppercase tracking-widest transition ${
-                mode === "login" ? "bg-gold-grad text-[oklch(0.2_0.06_25)]" : "text-[oklch(0.8_0.04_75)]"
+                mode === "login" ? "bg-gold-grad text-[oklch(0.22_0.1_300)]" : "text-[oklch(0.8_0.04_75)]"
               }`}
             >
               Přihlášení
@@ -83,7 +83,7 @@ function AuthPage() {
             <button
               onClick={() => setMode("signup")}
               className={`flex-1 py-2 rounded-md text-sm font-semibold uppercase tracking-widest transition ${
-                mode === "signup" ? "bg-gold-grad text-[oklch(0.2_0.06_25)]" : "text-[oklch(0.8_0.04_75)]"
+                mode === "signup" ? "bg-gold-grad text-[oklch(0.22_0.1_300)]" : "text-[oklch(0.8_0.04_75)]"
               }`}
             >
               Registrace
@@ -150,7 +150,7 @@ function AuthPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 rounded-lg bg-gold-grad text-[oklch(0.2_0.06_25)] font-extrabold uppercase tracking-widest shadow-gold disabled:opacity-50"
+              className="w-full py-3 rounded-lg bg-gold-grad text-[oklch(0.22_0.1_300)] font-extrabold uppercase tracking-widest shadow-gold disabled:opacity-50"
             >
               {loading ? "..." : mode === "login" ? "Přihlásit" : "Vytvořit účet"}
             </button>

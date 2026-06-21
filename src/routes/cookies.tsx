@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InfoPage } from "@/components/info-page";
 
 export const Route = createFileRoute("/cookies")({
-  head: () => ({ meta: [{ title: "Cookies — Cirkusová štěstěna" }] }),
+  head: () => ({ meta: [{ title: "Cookies — Kasino Sakura" }] }),
   component: () => (
     <InfoPage title="Zásady používání cookies">
       <p>Tento web používá pouze nezbytné cookies pro fungování přihlášení a uložení herního stavu.</p>

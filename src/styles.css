@@ -63,47 +63,50 @@
 
 :root {
   --radius: 0.75rem;
-  /* Circus night palette */
-  --background: oklch(0.17 0.04 25);
-  --foreground: oklch(0.96 0.02 85);
-  --card: oklch(0.22 0.06 25);
-  --card-foreground: oklch(0.96 0.02 85);
-  --popover: oklch(0.22 0.06 25);
-  --popover-foreground: oklch(0.96 0.02 85);
-  --primary: oklch(0.78 0.16 75); /* gold */
-  --primary-foreground: oklch(0.2 0.05 25);
-  --secondary: oklch(0.45 0.18 25); /* crimson */
-  --secondary-foreground: oklch(0.98 0.02 85);
-  --muted: oklch(0.27 0.04 25);
-  --muted-foreground: oklch(0.78 0.04 75);
-  --accent: oklch(0.55 0.22 30); /* fire red */
-  --accent-foreground: oklch(0.98 0.02 85);
+  /* Sakura moonlight palette — deep violet night, gold, sakura pink */
+  --background: oklch(0.18 0.08 300);
+  --foreground: oklch(0.97 0.02 320);
+  --card: oklch(0.24 0.1 300);
+  --card-foreground: oklch(0.97 0.02 320);
+  --popover: oklch(0.24 0.1 300);
+  --popover-foreground: oklch(0.97 0.02 320);
+  --primary: oklch(0.82 0.17 85); /* gold */
+  --primary-foreground: oklch(0.2 0.08 300);
+  --secondary: oklch(0.62 0.22 350); /* sakura pink */
+  --secondary-foreground: oklch(0.99 0.02 320);
+  --muted: oklch(0.28 0.08 300);
+  --muted-foreground: oklch(0.82 0.04 320);
+  --accent: oklch(0.58 0.22 340); /* hot pink */
+  --accent-foreground: oklch(0.99 0.02 320);
   --destructive: oklch(0.55 0.24 27);
   --destructive-foreground: oklch(0.98 0.02 85);
-  --border: oklch(0.4 0.08 60 / 50%);
-  --input: oklch(0.3 0.05 25);
+  --border: oklch(0.5 0.15 320 / 50%);
+  --input: oklch(0.3 0.08 300);
   --ring: oklch(0.78 0.16 75);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.2 0.05 25);
-  --sidebar-foreground: oklch(0.96 0.02 85);
+  --sidebar: oklch(0.2 0.08 300);
+  --sidebar-foreground: oklch(0.97 0.02 320);
   --sidebar-primary: oklch(0.78 0.16 75);
-  --sidebar-primary-foreground: oklch(0.2 0.05 25);
-  --sidebar-accent: oklch(0.55 0.22 30);
-  --sidebar-accent-foreground: oklch(0.98 0.02 85);
-  --sidebar-border: oklch(0.4 0.08 60 / 50%);
+  --sidebar-primary-foreground: oklch(0.2 0.08 300);
+  --sidebar-accent: oklch(0.58 0.22 340);
+  --sidebar-accent-foreground: oklch(0.99 0.02 320);
+  --sidebar-border: oklch(0.5 0.15 320 / 50%);
   --sidebar-ring: oklch(0.78 0.16 75);
 
   --gold: oklch(0.82 0.17 85);
   --gold-deep: oklch(0.62 0.14 70);
-  --crimson: oklch(0.42 0.2 25);
-  --crimson-deep: oklch(0.28 0.15 25);
-  --gradient-gold: linear-gradient(180deg, oklch(0.88 0.16 90), oklch(0.62 0.16 65) 50%, oklch(0.5 0.14 55));
-  --gradient-curtain: radial-gradient(ellipse at top, oklch(0.4 0.18 25) 0%, oklch(0.17 0.08 25) 70%);
-  --shadow-gold: 0 0 40px -8px oklch(0.78 0.16 75 / 0.5), 0 0 8px oklch(0.82 0.17 85 / 0.4);
+  --sakura: oklch(0.78 0.15 350);
+  --sakura-deep: oklch(0.5 0.2 340);
+  --violet-night: oklch(0.2 0.1 300);
+  --gradient-gold: linear-gradient(180deg, oklch(0.92 0.16 90), oklch(0.7 0.18 70) 50%, oklch(0.55 0.16 55));
+  --gradient-night: radial-gradient(ellipse at top, oklch(0.45 0.2 310) 0%, oklch(0.16 0.1 300) 70%);
+  --gradient-sakura: linear-gradient(180deg, oklch(0.78 0.18 350), oklch(0.55 0.22 340));
+  --shadow-gold: 0 0 40px -8px oklch(0.78 0.16 75 / 0.6), 0 0 12px oklch(0.82 0.17 85 / 0.5);
+  --shadow-sakura: 0 0 50px -10px oklch(0.65 0.22 340 / 0.7);
   --shadow-curtain: 0 20px 60px -10px oklch(0 0 0 / 0.6);
 }
 
@@ -150,14 +153,14 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: 'Cinzel', Georgia, serif;
+    font-family: 'Noto Serif JP', 'Cinzel', Georgia, serif;
     background-image:
-      radial-gradient(ellipse at top, oklch(0.3 0.12 25 / 0.6), transparent 60%),
-      radial-gradient(ellipse at bottom, oklch(0.25 0.1 25 / 0.4), transparent 60%);
+      radial-gradient(ellipse at top, oklch(0.4 0.18 310 / 0.55), transparent 60%),
+      radial-gradient(ellipse at bottom, oklch(0.3 0.14 340 / 0.35), transparent 60%);
     background-attachment: fixed;
   }
   h1, h2, h3, h4 {
-    font-family: 'Cinzel Decorative', 'Cinzel', serif;
+    font-family: 'Yuji Mai', 'Cinzel Decorative', serif;
     letter-spacing: 0.02em;
   }
 }
@@ -173,15 +176,17 @@
   .bg-gold-grad { background: var(--gradient-gold); }
   .shadow-gold { box-shadow: var(--shadow-gold); }
   .border-gold { border-color: var(--gold); }
+  .bg-sakura-grad { background: var(--gradient-sakura); }
+  .shadow-sakura { box-shadow: var(--shadow-sakura); }
   .ring-bulbs {
-    background-image: radial-gradient(circle, oklch(0.92 0.15 85) 0%, oklch(0.78 0.18 65) 40%, transparent 70%);
+    background-image: radial-gradient(circle, oklch(0.85 0.18 350) 0%, oklch(0.65 0.22 340) 40%, transparent 70%);
     background-size: 18px 18px;
     background-repeat: repeat-x;
     background-position: center;
   }
   @keyframes bulb-blink {
-    0%, 100% { opacity: 1; filter: drop-shadow(0 0 6px oklch(0.92 0.18 85)); }
-    50% { opacity: 0.55; filter: drop-shadow(0 0 2px oklch(0.7 0.14 70)); }
+    0%, 100% { opacity: 1; filter: drop-shadow(0 0 6px oklch(0.85 0.2 350)); }
+    50% { opacity: 0.55; filter: drop-shadow(0 0 2px oklch(0.6 0.18 340)); }
   }
   .animate-bulb { animation: bulb-blink 1.6s ease-in-out infinite; }
   @keyframes spin-reel {

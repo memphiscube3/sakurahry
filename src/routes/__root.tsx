@@ -89,8 +89,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Kasino Sakura — Sociální kasino zdarma" },
       { name: "twitter:description", content: "Hrajte zdarma japonský slot Kasino Sakura. Bez vkladů, bez výher reálných peněz — jen zábava a virtuální mince." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9c676c6e-6999-46e6-9c17-1b14393bf57f/id-preview-70cea46c--143cf9ae-9485-412c-8387-86eab6a34708.lovable.app-1782043480734.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9c676c6e-6999-46e6-9c17-1b14393bf57f/id-preview-70cea46c--143cf9ae-9485-412c-8387-86eab6a34708.lovable.app-1782043480734.png" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/662aaf04-4ad8-4283-a218-bdd6f7cde5c8" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/662aaf04-4ad8-4283-a218-bdd6f7cde5c8" },
     ],
     links: [
       {

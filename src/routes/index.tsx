@@ -57,9 +57,9 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 pt-12 pb-16 sm:pt-20 sm:pb-24 grid lg:grid-cols-2 gap-10 items-center">
           <div className="text-center lg:text-left">
             <img src={logo} alt="Kasino Sakura" className="mx-auto lg:mx-0 max-w-md w-full h-auto mb-6 drop-shadow-[0_0_30px_oklch(0.78_0.16_75/0.5)]" />
-            <p className="text-lg sm:text-xl text-[oklch(0.92_0.04_85)] mb-2 font-medium">Vítejte v japonském kasinu zdarma</p>
+            <p className="text-lg sm:text-xl text-[oklch(0.92_0.04_85)] mb-2 font-medium">Vítejte v japonském kasinu pod úplňkem</p>
             <p className="text-sm text-[oklch(0.8_0.04_75)] mb-8 max-w-lg mx-auto lg:mx-0">
-              Točte válce s ohnivými lvy, jokerymi a kouzelnými truhlami. Žádné vklady, žádné výhry v penězích — jen čistá radost ze hry.
+              Točte válce s oni maskami, koi rybami a kočičkami štěstí. Žádné vklady, žádné výhry v penězích — jen čistá radost ze hry pod sakurou.
             </p>
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
               <Link
@@ -90,7 +90,7 @@ function Index() {
             { icon: Coins, t: "Zcela zdarma", d: "Žádné vklady, žádné mikrotransakce. Hrajte tak dlouho, jak chcete." },
             { icon: Shield, t: "Bezpečné", d: "Sociální kasino bez reálných peněz. Pouze virtuální mince pro zábavu." },
             { icon: Trophy, t: "Ukládání pokroku", d: "Zaregistrujte se a vaše mince, výhry a historie zůstanou s vámi." },
-            { icon: Sparkles, t: "Japonská atmosféra", d: "Unikátní design, ohnivé symboly a dramatické animace." },
+            { icon: Sparkles, t: "Japonská atmosféra", d: "Unikátní design pod sakurou, sushi a lampiony — dramatické animace." },
           ].map((f, i) => (
             <div key={i} className="rounded-2xl p-6 bg-[oklch(0.22_0.06_25)] border border-[oklch(0.78_0.16_75/0.3)] hover:border-[oklch(0.78_0.16_75/0.7)] transition">
               <div className="w-12 h-12 rounded-full bg-gold-grad flex items-center justify-center mb-4">
@@ -109,7 +109,7 @@ function Index() {
         <div className="grid md:grid-cols-3 gap-6">
           {[
             { n: "01", t: "Nastavte sázku", d: "Vyberte velikost sázky pomocí tlačítek + a −. Sázka se odečte z vašich virtuálních mincí." },
-            { n: "02", t: "Stiskněte Točit", d: "Tři válce se roztočí pod japonskou pagodou. Sledujte, jak se zastavují jeden po druhém." },
+            { n: "02", t: "Stiskněte Točit", d: "Tři válce se roztočí pod sakurovou pagodou. Sledujte, jak se zastavují jeden po druhém." },
             { n: "03", t: "Vyhrávejte mince", d: "Tři stejné symboly přinesou velkou výhru podle tabulky výplat. Dva stejné menší." },
           ].map((s) => (
             <div key={s.n} className="rounded-2xl p-6 bg-gradient-to-br from-[oklch(0.28_0.12_25)] to-[oklch(0.18_0.06_25)] border border-[oklch(0.78_0.16_75/0.4)] relative overflow-hidden">

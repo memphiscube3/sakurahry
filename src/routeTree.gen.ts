@@ -9,8 +9,80 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ZodpovednaHraRouteImport } from './routes/zodpovedna-hra'
+import { Route as SmazaniUctuRouteImport } from './routes/smazani-uctu'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ProfilRouteImport } from './routes/profil'
+import { Route as PrihlaseniRouteImport } from './routes/prihlaseni'
+import { Route as PodminkyRouteImport } from './routes/podminky'
+import { Route as OchranaOsobnichUdajuRouteImport } from './routes/ochrana-osobnich-udaju'
+import { Route as ONasRouteImport } from './routes/o-nas'
+import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as HraRouteImport } from './routes/hra'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ZodpovednaHraRoute = ZodpovednaHraRouteImport.update({
+  id: '/zodpovedna-hra',
+  path: '/zodpovedna-hra',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SmazaniUctuRoute = SmazaniUctuRouteImport.update({
+  id: '/smazani-uctu',
+  path: '/smazani-uctu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfilRoute = ProfilRouteImport.update({
+  id: '/profil',
+  path: '/profil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrihlaseniRoute = PrihlaseniRouteImport.update({
+  id: '/prihlaseni',
+  path: '/prihlaseni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PodminkyRoute = PodminkyRouteImport.update({
+  id: '/podminky',
+  path: '/podminky',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OchranaOsobnichUdajuRoute = OchranaOsobnichUdajuRouteImport.update({
+  id: '/ochrana-osobnich-udaju',
+  path: '/ochrana-osobnich-udaju',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ONasRoute = ONasRouteImport.update({
+  id: '/o-nas',
+  path: '/o-nas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HraRoute = HraRouteImport.update({
+  id: '/hra',
+  path: '/hra',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +91,200 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cookies': typeof CookiesRoute
+  '/faq': typeof FaqRoute
+  '/hra': typeof HraRoute
+  '/kontakt': typeof KontaktRoute
+  '/o-nas': typeof ONasRoute
+  '/ochrana-osobnich-udaju': typeof OchranaOsobnichUdajuRoute
+  '/podminky': typeof PodminkyRoute
+  '/prihlaseni': typeof PrihlaseniRoute
+  '/profil': typeof ProfilRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/smazani-uctu': typeof SmazaniUctuRoute
+  '/zodpovedna-hra': typeof ZodpovednaHraRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cookies': typeof CookiesRoute
+  '/faq': typeof FaqRoute
+  '/hra': typeof HraRoute
+  '/kontakt': typeof KontaktRoute
+  '/o-nas': typeof ONasRoute
+  '/ochrana-osobnich-udaju': typeof OchranaOsobnichUdajuRoute
+  '/podminky': typeof PodminkyRoute
+  '/prihlaseni': typeof PrihlaseniRoute
+  '/profil': typeof ProfilRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/smazani-uctu': typeof SmazaniUctuRoute
+  '/zodpovedna-hra': typeof ZodpovednaHraRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cookies': typeof CookiesRoute
+  '/faq': typeof FaqRoute
+  '/hra': typeof HraRoute
+  '/kontakt': typeof KontaktRoute
+  '/o-nas': typeof ONasRoute
+  '/ochrana-osobnich-udaju': typeof OchranaOsobnichUdajuRoute
+  '/podminky': typeof PodminkyRoute
+  '/prihlaseni': typeof PrihlaseniRoute
+  '/profil': typeof ProfilRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/smazani-uctu': typeof SmazaniUctuRoute
+  '/zodpovedna-hra': typeof ZodpovednaHraRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/cookies'
+    | '/faq'
+    | '/hra'
+    | '/kontakt'
+    | '/o-nas'
+    | '/ochrana-osobnich-udaju'
+    | '/podminky'
+    | '/prihlaseni'
+    | '/profil'
+    | '/sitemap.xml'
+    | '/smazani-uctu'
+    | '/zodpovedna-hra'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/cookies'
+    | '/faq'
+    | '/hra'
+    | '/kontakt'
+    | '/o-nas'
+    | '/ochrana-osobnich-udaju'
+    | '/podminky'
+    | '/prihlaseni'
+    | '/profil'
+    | '/sitemap.xml'
+    | '/smazani-uctu'
+    | '/zodpovedna-hra'
+  id:
+    | '__root__'
+    | '/'
+    | '/cookies'
+    | '/faq'
+    | '/hra'
+    | '/kontakt'
+    | '/o-nas'
+    | '/ochrana-osobnich-udaju'
+    | '/podminky'
+    | '/prihlaseni'
+    | '/profil'
+    | '/sitemap.xml'
+    | '/smazani-uctu'
+    | '/zodpovedna-hra'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CookiesRoute: typeof CookiesRoute
+  FaqRoute: typeof FaqRoute
+  HraRoute: typeof HraRoute
+  KontaktRoute: typeof KontaktRoute
+  ONasRoute: typeof ONasRoute
+  OchranaOsobnichUdajuRoute: typeof OchranaOsobnichUdajuRoute
+  PodminkyRoute: typeof PodminkyRoute
+  PrihlaseniRoute: typeof PrihlaseniRoute
+  ProfilRoute: typeof ProfilRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SmazaniUctuRoute: typeof SmazaniUctuRoute
+  ZodpovednaHraRoute: typeof ZodpovednaHraRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/zodpovedna-hra': {
+      id: '/zodpovedna-hra'
+      path: '/zodpovedna-hra'
+      fullPath: '/zodpovedna-hra'
+      preLoaderRoute: typeof ZodpovednaHraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/smazani-uctu': {
+      id: '/smazani-uctu'
+      path: '/smazani-uctu'
+      fullPath: '/smazani-uctu'
+      preLoaderRoute: typeof SmazaniUctuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profil': {
+      id: '/profil'
+      path: '/profil'
+      fullPath: '/profil'
+      preLoaderRoute: typeof ProfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prihlaseni': {
+      id: '/prihlaseni'
+      path: '/prihlaseni'
+      fullPath: '/prihlaseni'
+      preLoaderRoute: typeof PrihlaseniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/podminky': {
+      id: '/podminky'
+      path: '/podminky'
+      fullPath: '/podminky'
+      preLoaderRoute: typeof PodminkyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ochrana-osobnich-udaju': {
+      id: '/ochrana-osobnich-udaju'
+      path: '/ochrana-osobnich-udaju'
+      fullPath: '/ochrana-osobnich-udaju'
+      preLoaderRoute: typeof OchranaOsobnichUdajuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/o-nas': {
+      id: '/o-nas'
+      path: '/o-nas'
+      fullPath: '/o-nas'
+      preLoaderRoute: typeof ONasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hra': {
+      id: '/hra'
+      path: '/hra'
+      fullPath: '/hra'
+      preLoaderRoute: typeof HraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +297,19 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CookiesRoute: CookiesRoute,
+  FaqRoute: FaqRoute,
+  HraRoute: HraRoute,
+  KontaktRoute: KontaktRoute,
+  ONasRoute: ONasRoute,
+  OchranaOsobnichUdajuRoute: OchranaOsobnichUdajuRoute,
+  PodminkyRoute: PodminkyRoute,
+  PrihlaseniRoute: PrihlaseniRoute,
+  ProfilRoute: ProfilRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SmazaniUctuRoute: SmazaniUctuRoute,
+  ZodpovednaHraRoute: ZodpovednaHraRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

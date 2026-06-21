@@ -23,12 +23,12 @@ function GamePage() {
         <p className="text-center text-[oklch(0.8_0.04_75)] mb-10">Roztočte válce a získejte virtuální mince</p>
         <SlotMachine />
         {!user && (
-          <div className="mt-10 max-w-xl mx-auto rounded-2xl bg-[oklch(0.22_0.06_25)] border border-[oklch(0.78_0.16_75/0.4)] p-6 text-center">
+          <div className="mt-10 max-w-xl mx-auto rounded-2xl bg-[oklch(0.24_0.1_300)] border border-[oklch(0.78_0.16_75/0.4)] p-6 text-center">
             <h3 className="text-xl text-gold mb-2">Uložte si pokrok</h3>
             <p className="text-sm text-[oklch(0.85_0.04_75)] mb-4">
               Zaregistrujte se zdarma a vaše mince, historie hry a úspěchy zůstanou s vámi.
             </p>
-            <Link to="/prihlaseni" className="inline-flex px-6 py-3 rounded-lg bg-gold-grad text-[oklch(0.2_0.06_25)] font-bold uppercase tracking-widest shadow-gold">
+            <Link to="/prihlaseni" className="inline-flex px-6 py-3 rounded-lg bg-gold-grad text-[oklch(0.22_0.1_300)] font-bold uppercase tracking-widest shadow-gold">
               Registrovat se
             </Link>
           </div>

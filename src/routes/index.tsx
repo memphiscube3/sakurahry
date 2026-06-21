@@ -33,7 +33,7 @@ function Faq() {
   return (
     <div className="space-y-3">
       {faqs.map((f, i) => (
-        <div key={i} className="rounded-xl border border-[oklch(0.78_0.16_75/0.3)] bg-[oklch(0.22_0.06_25)] overflow-hidden">
+        <div key={i} className="rounded-xl border border-[oklch(0.78_0.16_75/0.3)] bg-[oklch(0.24_0.1_300)] overflow-hidden">
           <button onClick={() => setOpen(open === i ? null : i)} className="w-full flex items-center justify-between p-4 text-left">
             <span className="text-[oklch(0.95_0.04_85)] font-semibold">{f.q}</span>
             <ChevronDown className={`h-5 w-5 text-[oklch(0.88_0.16_85)] transition ${open === i ? "rotate-180" : ""}`} />
@@ -52,7 +52,7 @@ function Index() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img src={heroBg} alt="" className="w-full h-full object-cover opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.17_0.06_25/0.6)] via-transparent to-[oklch(0.17_0.06_25)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.18_0.1_300/0.6)] via-transparent to-[oklch(0.18_0.1_300)]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 pt-12 pb-16 sm:pt-20 sm:pb-24 grid lg:grid-cols-2 gap-10 items-center">
           <div className="text-center lg:text-left">
@@ -64,13 +64,13 @@ function Index() {
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
               <Link
                 to="/hra"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gold-grad text-[oklch(0.2_0.06_25)] font-extrabold uppercase tracking-widest shadow-gold hover:brightness-110 transition animate-glow"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gold-grad text-[oklch(0.22_0.1_300)] font-extrabold uppercase tracking-widest shadow-gold hover:brightness-110 transition animate-glow"
               >
                 <Sparkles className="h-5 w-5" /> Hrát zdarma
               </Link>
               <Link
                 to="/prihlaseni"
-                className="inline-flex items-center gap-2 px-6 py-4 rounded-xl bg-[oklch(0.4_0.18_25)] hover:bg-[oklch(0.45_0.2_25)] border border-[oklch(0.78_0.16_75/0.5)] text-[oklch(0.95_0.04_85)] font-semibold uppercase tracking-widest"
+                className="inline-flex items-center gap-2 px-6 py-4 rounded-xl bg-[oklch(0.55_0.22_340)] hover:bg-[oklch(0.62_0.24_340)] border border-[oklch(0.78_0.16_75/0.5)] text-[oklch(0.95_0.04_85)] font-semibold uppercase tracking-widest"
               >
                 Registrace
               </Link>
@@ -92,9 +92,9 @@ function Index() {
             { icon: Trophy, t: "Ukládání pokroku", d: "Zaregistrujte se a vaše mince, výhry a historie zůstanou s vámi." },
             { icon: Sparkles, t: "Japonská atmosféra", d: "Unikátní design pod sakurou, sushi a lampiony — dramatické animace." },
           ].map((f, i) => (
-            <div key={i} className="rounded-2xl p-6 bg-[oklch(0.22_0.06_25)] border border-[oklch(0.78_0.16_75/0.3)] hover:border-[oklch(0.78_0.16_75/0.7)] transition">
+            <div key={i} className="rounded-2xl p-6 bg-[oklch(0.24_0.1_300)] border border-[oklch(0.78_0.16_75/0.3)] hover:border-[oklch(0.78_0.16_75/0.7)] transition">
               <div className="w-12 h-12 rounded-full bg-gold-grad flex items-center justify-center mb-4">
-                <f.icon className="h-6 w-6 text-[oklch(0.2_0.06_25)]" />
+                <f.icon className="h-6 w-6 text-[oklch(0.22_0.1_300)]" />
               </div>
               <h3 className="text-lg text-gold mb-2">{f.t}</h3>
               <p className="text-sm text-[oklch(0.85_0.04_75)] leading-relaxed">{f.d}</p>
@@ -112,7 +112,7 @@ function Index() {
             { n: "02", t: "Stiskněte Točit", d: "Tři válce se roztočí pod sakurovou pagodou. Sledujte, jak se zastavují jeden po druhém." },
             { n: "03", t: "Vyhrávejte mince", d: "Tři stejné symboly přinesou velkou výhru podle tabulky výplat. Dva stejné menší." },
           ].map((s) => (
-            <div key={s.n} className="rounded-2xl p-6 bg-gradient-to-br from-[oklch(0.28_0.12_25)] to-[oklch(0.18_0.06_25)] border border-[oklch(0.78_0.16_75/0.4)] relative overflow-hidden">
+            <div key={s.n} className="rounded-2xl p-6 bg-gradient-to-br from-[oklch(0.32_0.14_310)] to-[oklch(0.2_0.1_300)] border border-[oklch(0.78_0.16_75/0.4)] relative overflow-hidden">
               <div className="absolute -top-2 -right-2 text-7xl font-black text-gold opacity-20">{s.n}</div>
               <h3 className="text-xl text-gold mb-3 relative">{s.t}</h3>
               <p className="text-sm text-[oklch(0.85_0.04_75)] relative leading-relaxed">{s.d}</p>
@@ -136,7 +136,7 @@ function Index() {
 
       {/* DISCLAIMER */}
       <section className="max-w-5xl mx-auto px-4 pb-16">
-        <div className="rounded-2xl bg-[oklch(0.22_0.06_25)] border border-[oklch(0.55_0.22_30/0.5)] p-6 text-center">
+        <div className="rounded-2xl bg-[oklch(0.24_0.1_300)] border border-[oklch(0.6_0.22_340/0.5)] p-6 text-center">
           <p className="text-sm text-[oklch(0.9_0.04_75)] leading-relaxed">
             <strong className="text-gold">Důležité upozornění:</strong> Kasino Sakura je sociální kasino a není hazardní hrou o reálné peníze.
             Veškeré virtuální mince nemají peněžní hodnotu a nelze je vyměnit za peníze, zboží ani služby. Hra je určena pouze pro osoby starší 18 let.

@@ -165,7 +165,7 @@ export function SlotMachine() {
     <div className="relative max-w-3xl mx-auto">
       {/* Cabinet */}
       <div className="relative rounded-3xl p-1 bg-gold-grad shadow-gold">
-        <div className="rounded-3xl bg-gradient-to-b from-[oklch(0.28_0.14_25)] to-[oklch(0.18_0.08_25)] p-5 sm:p-8 border border-[oklch(0.88_0.16_85/0.3)]">
+        <div className="rounded-3xl bg-gradient-to-b from-[oklch(0.32_0.16_310)] to-[oklch(0.18_0.1_300)] p-5 sm:p-8 border border-[oklch(0.88_0.16_85/0.3)]">
           {/* marquee bulbs */}
           <div className="ring-bulbs h-3 animate-bulb mb-4 rounded-full" />
 
@@ -184,7 +184,7 @@ export function SlotMachine() {
           </div>
 
           {/* Reels */}
-          <div className="grid grid-cols-3 gap-3 sm:gap-4 p-3 sm:p-5 rounded-2xl bg-[oklch(0.1_0.04_25)] border-2 border-[oklch(0.78_0.16_75/0.5)] shadow-inner">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4 p-3 sm:p-5 rounded-2xl bg-[oklch(0.14_0.08_300)] border-2 border-[oklch(0.78_0.16_75/0.5)] shadow-inner">
             {reels.map((s, i) => (
               <div
                 key={i}
@@ -196,7 +196,7 @@ export function SlotMachine() {
                   key={`${i}-${s.key}-${spinning}`}
                   src={s.img}
                   alt={s.name}
-                  className={`w-full h-full object-contain drop-shadow-[0_4px_10px_oklch(0.3_0.1_25/0.6)] ${spinning ? "blur-[1px] scale-110" : ""}`}
+                  className={`w-full h-full object-contain drop-shadow-[0_4px_10px_oklch(0.3_0.14_320/0.6)] ${spinning ? "blur-[1px] scale-110" : ""}`}
                 />
               </div>
             ))}
@@ -228,7 +228,7 @@ export function SlotMachine() {
             <button
               onClick={spin}
               disabled={spinning || coins < bet}
-              className="relative px-10 py-4 rounded-xl bg-gold-grad text-[oklch(0.2_0.06_25)] text-lg uppercase tracking-widest font-extrabold shadow-gold disabled:opacity-50 hover:brightness-110 active:scale-95 transition border-2 border-[oklch(0.5_0.12_55)]"
+              className="relative px-10 py-4 rounded-xl bg-gold-grad text-[oklch(0.22_0.1_300)] text-lg uppercase tracking-widest font-extrabold shadow-gold disabled:opacity-50 hover:brightness-110 active:scale-95 transition border-2 border-[oklch(0.5_0.12_55)]"
             >
               {spinning ? "Točím…" : "Točit"}
             </button>
@@ -236,7 +236,7 @@ export function SlotMachine() {
             <div className="flex justify-center">
               <button
                 onClick={topUp}
-                className="px-4 py-2 rounded-lg bg-[oklch(0.4_0.18_25)] hover:bg-[oklch(0.45_0.2_25)] border border-[oklch(0.78_0.16_75/0.5)] text-sm text-[oklch(0.95_0.04_85)] font-semibold"
+                className="px-4 py-2 rounded-lg bg-[oklch(0.55_0.22_340)] hover:bg-[oklch(0.62_0.24_340)] border border-[oklch(0.78_0.16_75/0.5)] text-sm text-[oklch(0.95_0.04_85)] font-semibold"
               >
                 +500 zdarma
               </button>
@@ -246,7 +246,7 @@ export function SlotMachine() {
       </div>
 
       {/* Paytable */}
-      <div className="mt-6 rounded-2xl bg-[oklch(0.2_0.06_25)] border border-[oklch(0.78_0.16_75/0.3)] p-5">
+      <div className="mt-6 rounded-2xl bg-[oklch(0.22_0.1_300)] border border-[oklch(0.78_0.16_75/0.3)] p-5">
         <h3 className="text-gold text-sm uppercase tracking-widest mb-3">Výplaty (3 stejné × sázka)</h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-3">
           {SYMBOLS.map((s) => (

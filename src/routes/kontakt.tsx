@@ -37,7 +37,7 @@ function ContactPage() {
           <label className="text-xs uppercase tracking-widest text-[oklch(0.8_0.04_75)] mb-1 block">Zpráva</label>
           <textarea required value={msg} onChange={(e) => setMsg(e.target.value)} rows={5} className="w-full px-4 py-3 rounded-lg bg-black/40 border border-[oklch(0.78_0.16_75/0.4)] text-[oklch(0.95_0.04_85)]" />
         </div>
-        <button type="submit" className="px-6 py-3 rounded-lg bg-gold-grad text-[oklch(0.2_0.06_25)] font-bold uppercase tracking-widest shadow-gold">Odeslat</button>
+        <button type="submit" className="px-6 py-3 rounded-lg bg-gold-grad text-[oklch(0.22_0.1_300)] font-bold uppercase tracking-widest shadow-gold">Odeslat</button>
       </form>
     </InfoPage>
   );

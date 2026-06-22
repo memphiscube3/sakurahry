@@ -333,7 +333,7 @@ export function SlotMachine() {
       {/* Paytable */}
       <div className="mt-4 rounded-2xl bg-[oklch(0.22_0.1_300)] border border-[oklch(0.78_0.16_75/0.3)] p-4">
         <h3 className="text-gold text-xs uppercase tracking-widest mb-2">Výplaty (3 stejné × sázka)</h3>
-        <div className="grid grid-cols-4 sm:grid-cols-7 gap-2">
+        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-11 gap-2">
           {SYMBOLS.map((s) => (
             <div key={s.key} className="flex flex-col items-center gap-0.5 p-1.5 rounded-lg bg-black/30">
               <img src={s.img} alt={s.name} className="w-9 h-9 object-contain" />

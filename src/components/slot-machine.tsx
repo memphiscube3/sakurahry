@@ -170,6 +170,8 @@ export function SlotMachine() {
           const matchSym = a.key === b.key ? a : b.key === c.key ? b : a;
           rowWin = Math.floor(bet * (matchSym.mult / 5));
         }
+        // halve win frequency: 50% of would-be wins are voided
+        if (rowWin > 0 && Math.random() < 0.5) rowWin = 0;
         if (rowWin > 0) {
           wonRows.push(row);
           totalWin += rowWin;

@@ -50,9 +50,14 @@ export function SlotMachine() {
   const [coins, setCoins] = useState<number>(1000);
   const [bet, setBet] = useState(25);
   const [spinning, setSpinning] = useState(false);
-  const [reels, setReels] = useState<typeof SYMBOLS>([SYMBOLS[0], SYMBOLS[1], SYMBOLS[2]]);
+  const [reels, setReels] = useState<(typeof SYMBOLS[number])[][]>([
+    [SYMBOLS[0], SYMBOLS[1], SYMBOLS[2]],
+    [SYMBOLS[1], SYMBOLS[2], SYMBOLS[3]],
+    [SYMBOLS[2], SYMBOLS[3], SYMBOLS[4]],
+  ]);
   const [lastWin, setLastWin] = useState(0);
   const [winPulse, setWinPulse] = useState(false);
+  const [winningRows, setWinningRows] = useState<number[]>([]);
   const reelTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   // sync coins source
@@ -92,20 +97,29 @@ export function SlotMachine() {
       return;
     }
     setLastWin(0);
+    setWinningRows([]);
     setSpinning(true);
     const newCoins = coins - bet;
     setCoins(newCoins);
 
-    // pre-pick final symbols
-    const finals = [pickSymbol(), pickSymbol(), pickSymbol()];
+    // pre-pick final symbols: 3 reels × 3 rows
+    const finals: (typeof SYMBOLS[number])[][] = [
+      [pickSymbol(), pickSymbol(), pickSymbol()],
+      [pickSymbol(), pickSymbol(), pickSymbol()],
+      [pickSymbol(), pickSymbol(), pickSymbol()],
+    ];
 
     // animate each reel with cycling random symbols, stop staggered
     const cycleHandles: ReturnType<typeof setInterval>[] = [];
     [0, 1, 2].forEach((i) => {
       cycleHandles[i] = setInterval(() => {
         setReels((prev) => {
-          const copy = [...prev];
-          copy[i] = SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
+          const copy = prev.map((r) => [...r]);
+          copy[i] = [
+            SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)],
+            SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)],
+            SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)],
+          ];
           return copy;
         });
       }, 70);
@@ -115,30 +129,41 @@ export function SlotMachine() {
       const t = setTimeout(() => {
         clearInterval(cycleHandles[i]);
         setReels((prev) => {
-          const copy = [...prev];
+          const copy = prev.map((r) => [...r]);
           copy[i] = finals[i];
           return copy;
         });
         if (i === 2) {
-          // resolve win
-          const a = finals[0].key, b = finals[1].key, c = finals[2].key;
-          let win = 0;
-          if (a === b && b === c) {
-            win = bet * finals[0].mult;
-          } else if (a === b || b === c || a === c) {
-            const matchSym = a === b ? finals[0] : b === c ? finals[1] : finals[0];
-            win = Math.floor(bet * (matchSym.mult / 5));
+          // resolve wins across 3 horizontal rows
+          let totalWin = 0;
+          const wonRows: number[] = [];
+          const flatSyms: SymbolKey[] = [];
+          for (let row = 0; row < 3; row++) {
+            const a = finals[0][row], b = finals[1][row], c = finals[2][row];
+            flatSyms.push(a.key, b.key, c.key);
+            let rowWin = 0;
+            if (a.key === b.key && b.key === c.key) {
+              rowWin = bet * a.mult;
+            } else if (a.key === b.key || b.key === c.key || a.key === c.key) {
+              const matchSym = a.key === b.key ? a : b.key === c.key ? b : a;
+              rowWin = Math.floor(bet * (matchSym.mult / 5));
+            }
+            if (rowWin > 0) {
+              wonRows.push(row);
+              totalWin += rowWin;
+            }
           }
-          const afterWin = newCoins + win;
+          const afterWin = newCoins + totalWin;
           setCoins(afterWin);
-          setLastWin(win);
+          setLastWin(totalWin);
+          setWinningRows(wonRows);
           setSpinning(false);
-          if (win > 0) {
+          if (totalWin > 0) {
             setWinPulse(true);
             setTimeout(() => setWinPulse(false), 1500);
-            toast.success(`Výhra ${win.toLocaleString("cs-CZ")} mincí!`, { duration: 2500 });
+            toast.success(`Výhra ${totalWin.toLocaleString("cs-CZ")} mincí!`, { duration: 2500 });
           }
-          persistCoins(afterWin, win, [a, b, c]);
+          persistCoins(afterWin, totalWin, flatSyms);
         }
       }, delay);
       reelTimers.current.push(t);
@@ -183,21 +208,30 @@ export function SlotMachine() {
             </div>
           </div>
 
-          {/* Reels */}
+          {/* Reels: 3 columns × 3 rows */}
           <div className="grid grid-cols-3 gap-3 sm:gap-4 p-3 sm:p-5 rounded-2xl bg-[oklch(0.14_0.08_300)] border-2 border-[oklch(0.78_0.16_75/0.5)] shadow-inner">
-            {reels.map((s, i) => (
-              <div
-                key={i}
-                className={`aspect-square rounded-xl bg-gradient-to-b from-[oklch(0.35_0.18_310)] to-[oklch(0.22_0.12_300)] flex items-center justify-center p-2 sm:p-4 overflow-hidden border-2 border-[oklch(0.65_0.22_340/0.7)] ${
-                  spinning ? "" : "animate-coin-pop"
-                }`}
-              >
-                <img
-                  key={`${i}-${s.key}-${spinning}`}
-                  src={s.img}
-                  alt={s.name}
-                  className={`w-full h-full object-contain drop-shadow-[0_4px_10px_oklch(0.3_0.14_320/0.6)] ${spinning ? "blur-[1px] scale-110" : ""}`}
-                />
+            {reels.map((col, i) => (
+              <div key={i} className="flex flex-col gap-2 sm:gap-3">
+                {col.map((s, row) => {
+                  const isWinRow = winningRows.includes(row) && !spinning;
+                  return (
+                    <div
+                      key={`${i}-${row}`}
+                      className={`aspect-square rounded-xl bg-gradient-to-b from-[oklch(0.35_0.18_310)] to-[oklch(0.22_0.12_300)] flex items-center justify-center p-2 sm:p-3 overflow-hidden border-2 ${
+                        isWinRow
+                          ? "border-[oklch(0.88_0.18_85)] animate-glow"
+                          : "border-[oklch(0.65_0.22_340/0.7)]"
+                      } ${spinning ? "" : "animate-coin-pop"}`}
+                    >
+                      <img
+                        key={`${i}-${row}-${s.key}-${spinning}`}
+                        src={s.img}
+                        alt={s.name}
+                        className={`w-full h-full object-contain drop-shadow-[0_4px_10px_oklch(0.3_0.14_320/0.6)] ${spinning ? "blur-[1px] scale-110" : ""}`}
+                      />
+                    </div>
+                  );
+                })}
               </div>
             ))}
           </div>

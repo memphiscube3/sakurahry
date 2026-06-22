@@ -160,9 +160,13 @@ export function SlotMachine() {
       let totalWin = 0;
       const wonRows: number[] = [];
       const flatSyms: SymbolKey[] = [];
+      // collect all 9 visible symbols for history
       for (let row = 0; row < 3; row++) {
-        const a = finals[0][row], b = finals[1][row], c = finals[2][row];
-        flatSyms.push(a.key, b.key, c.key);
+        flatSyms.push(finals[0][row].key, finals[1][row].key, finals[2][row].key);
+      }
+      // wins only on center row (row 1)
+      {
+        const a = finals[0][1], b = finals[1][1], c = finals[2][1];
         let rowWin = 0;
         if (a.key === b.key && b.key === c.key) {
           rowWin = bet * a.mult;
@@ -170,10 +174,9 @@ export function SlotMachine() {
           const matchSym = a.key === b.key ? a : b.key === c.key ? b : a;
           rowWin = Math.floor(bet * (matchSym.mult / 5));
         }
-        // halve win frequency: 50% of would-be wins are voided
         if (rowWin > 0 && Math.random() < 0.5) rowWin = 0;
         if (rowWin > 0) {
-          wonRows.push(row);
+          wonRows.push(1);
           totalWin += rowWin;
         }
       }
@@ -181,6 +184,7 @@ export function SlotMachine() {
       setCoins(afterWin);
       setLastWin(totalWin);
       setWinningRows(wonRows);
+
       setSpinning(false);
       if (totalWin > 0) {
         setWinPulse(true);
@@ -268,23 +272,24 @@ export function SlotMachine() {
               ))}
             </div>
 
-            {/* Winning row frames (static, site-styled) */}
-            {!spinning &&
-              winningRows.map((row) => (
-                <div
-                  key={`win-${row}`}
-                  className="pointer-events-none absolute rounded-xl border-2 border-[oklch(0.88_0.18_85)] shadow-[0_0_18px_oklch(0.88_0.18_85/0.55),inset_0_0_14px_oklch(0.88_0.18_85/0.25)]"
-                  style={{
-                    top: `${REEL_PAD + row * CELL_H}px`,
-                    left: `${REEL_PAD}px`,
-                    right: `${REEL_PAD}px`,
-                    height: `${CELL_H}px`,
-                  }}
-                >
-                  <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[oklch(0.88_0.18_85)] shadow-[0_0_8px_oklch(0.88_0.18_85)]" />
-                  <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[oklch(0.88_0.18_85)] shadow-[0_0_8px_oklch(0.88_0.18_85)]" />
-                </div>
-              ))}
+            {/* Always-visible center row frame */}
+            <div
+              className={`pointer-events-none absolute rounded-xl border-2 ${
+                !spinning && winningRows.includes(1)
+                  ? "border-[oklch(0.88_0.18_85)] shadow-[0_0_18px_oklch(0.88_0.18_85/0.55),inset_0_0_14px_oklch(0.88_0.18_85/0.25)]"
+                  : "border-[oklch(0.78_0.14_75/0.6)] shadow-[inset_0_0_10px_oklch(0.78_0.14_75/0.18)]"
+              }`}
+              style={{
+                top: `${REEL_PAD + 1 * CELL_H}px`,
+                left: `${REEL_PAD}px`,
+                right: `${REEL_PAD}px`,
+                height: `${CELL_H}px`,
+              }}
+            >
+              <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[oklch(0.88_0.18_85)] shadow-[0_0_8px_oklch(0.88_0.18_85)]" />
+              <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[oklch(0.88_0.18_85)] shadow-[0_0_8px_oklch(0.88_0.18_85)]" />
+            </div>
+
           </div>
 
           {/* Controls */}

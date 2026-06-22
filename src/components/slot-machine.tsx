@@ -208,21 +208,30 @@ export function SlotMachine() {
             </div>
           </div>
 
-          {/* Reels */}
+          {/* Reels: 3 columns × 3 rows */}
           <div className="grid grid-cols-3 gap-3 sm:gap-4 p-3 sm:p-5 rounded-2xl bg-[oklch(0.14_0.08_300)] border-2 border-[oklch(0.78_0.16_75/0.5)] shadow-inner">
-            {reels.map((s, i) => (
-              <div
-                key={i}
-                className={`aspect-square rounded-xl bg-gradient-to-b from-[oklch(0.35_0.18_310)] to-[oklch(0.22_0.12_300)] flex items-center justify-center p-2 sm:p-4 overflow-hidden border-2 border-[oklch(0.65_0.22_340/0.7)] ${
-                  spinning ? "" : "animate-coin-pop"
-                }`}
-              >
-                <img
-                  key={`${i}-${s.key}-${spinning}`}
-                  src={s.img}
-                  alt={s.name}
-                  className={`w-full h-full object-contain drop-shadow-[0_4px_10px_oklch(0.3_0.14_320/0.6)] ${spinning ? "blur-[1px] scale-110" : ""}`}
-                />
+            {reels.map((col, i) => (
+              <div key={i} className="flex flex-col gap-2 sm:gap-3">
+                {col.map((s, row) => {
+                  const isWinRow = winningRows.includes(row) && !spinning;
+                  return (
+                    <div
+                      key={`${i}-${row}`}
+                      className={`aspect-square rounded-xl bg-gradient-to-b from-[oklch(0.35_0.18_310)] to-[oklch(0.22_0.12_300)] flex items-center justify-center p-2 sm:p-3 overflow-hidden border-2 ${
+                        isWinRow
+                          ? "border-[oklch(0.88_0.18_85)] animate-glow"
+                          : "border-[oklch(0.65_0.22_340/0.7)]"
+                      } ${spinning ? "" : "animate-coin-pop"}`}
+                    >
+                      <img
+                        key={`${i}-${row}-${s.key}-${spinning}`}
+                        src={s.img}
+                        alt={s.name}
+                        className={`w-full h-full object-contain drop-shadow-[0_4px_10px_oklch(0.3_0.14_320/0.6)] ${spinning ? "blur-[1px] scale-110" : ""}`}
+                      />
+                    </div>
+                  );
+                })}
               </div>
             ))}
           </div>

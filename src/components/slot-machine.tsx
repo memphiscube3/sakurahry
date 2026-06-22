@@ -160,9 +160,13 @@ export function SlotMachine() {
       let totalWin = 0;
       const wonRows: number[] = [];
       const flatSyms: SymbolKey[] = [];
+      // collect all 9 visible symbols for history
       for (let row = 0; row < 3; row++) {
-        const a = finals[0][row], b = finals[1][row], c = finals[2][row];
-        flatSyms.push(a.key, b.key, c.key);
+        flatSyms.push(finals[0][row].key, finals[1][row].key, finals[2][row].key);
+      }
+      // wins only on center row (row 1)
+      {
+        const a = finals[0][1], b = finals[1][1], c = finals[2][1];
         let rowWin = 0;
         if (a.key === b.key && b.key === c.key) {
           rowWin = bet * a.mult;
@@ -170,10 +174,9 @@ export function SlotMachine() {
           const matchSym = a.key === b.key ? a : b.key === c.key ? b : a;
           rowWin = Math.floor(bet * (matchSym.mult / 5));
         }
-        // halve win frequency: 50% of would-be wins are voided
         if (rowWin > 0 && Math.random() < 0.5) rowWin = 0;
         if (rowWin > 0) {
-          wonRows.push(row);
+          wonRows.push(1);
           totalWin += rowWin;
         }
       }
@@ -181,6 +184,7 @@ export function SlotMachine() {
       setCoins(afterWin);
       setLastWin(totalWin);
       setWinningRows(wonRows);
+
       setSpinning(false);
       if (totalWin > 0) {
         setWinPulse(true);

@@ -6,19 +6,29 @@ import symWagasa from "@/assets/sym-wagasa.png";
 import symCrane from "@/assets/sym-crane.png";
 import symLantern from "@/assets/sym-lantern.png";
 import symLotus from "@/assets/sym-lotus.png";
+import symFan from "@/assets/sym-fan.png";
+import symKoban from "@/assets/sym-koban.png";
+import symBonsai from "@/assets/sym-bonsai.png";
+import symSakura from "@/assets/sym-sakura.png";
 import { Coins, Minus, Plus } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
-export type SymbolKey = "oni" | "koi" | "torii" | "wagasa" | "crane" | "lantern" | "lotus";
+export type SymbolKey =
+  | "oni" | "koi" | "torii" | "wagasa" | "crane" | "lantern" | "lotus"
+  | "fan" | "koban" | "bonsai" | "sakura";
 
 const SYMBOLS: { key: SymbolKey; img: string; mult: number; weight: number; name: string }[] = [
+  { key: "sakura", img: symSakura, mult: 4, weight: 16, name: "Sakura" },
   { key: "torii", img: symTorii, mult: 5, weight: 14, name: "Torii" },
-  { key: "lantern", img: symLantern, mult: 8, weight: 12, name: "Lampion" },
-  { key: "wagasa", img: symWagasa, mult: 10, weight: 10, name: "Wagasa" },
-  { key: "koi", img: symKoi, mult: 15, weight: 8, name: "Koi" },
-  { key: "crane", img: symCrane, mult: 25, weight: 6, name: "Jeřáb" },
+  { key: "fan", img: symFan, mult: 7, weight: 12, name: "Sensu" },
+  { key: "lantern", img: symLantern, mult: 8, weight: 11, name: "Lampion" },
+  { key: "wagasa", img: symWagasa, mult: 10, weight: 9, name: "Wagasa" },
+  { key: "bonsai", img: symBonsai, mult: 12, weight: 8, name: "Bonsai" },
+  { key: "koi", img: symKoi, mult: 15, weight: 7, name: "Koi" },
+  { key: "crane", img: symCrane, mult: 25, weight: 5, name: "Jeřáb" },
+  { key: "koban", img: symKoban, mult: 40, weight: 4, name: "Koban" },
   { key: "oni", img: symOni, mult: 50, weight: 3, name: "Oni" },
   { key: "lotus", img: symLotus, mult: 100, weight: 2, name: "Lotos" },
 ];
@@ -160,6 +170,8 @@ export function SlotMachine() {
           const matchSym = a.key === b.key ? a : b.key === c.key ? b : a;
           rowWin = Math.floor(bet * (matchSym.mult / 5));
         }
+        // halve win frequency: 50% of would-be wins are voided
+        if (rowWin > 0 && Math.random() < 0.5) rowWin = 0;
         if (rowWin > 0) {
           wonRows.push(row);
           totalWin += rowWin;
@@ -321,7 +333,7 @@ export function SlotMachine() {
       {/* Paytable */}
       <div className="mt-4 rounded-2xl bg-[oklch(0.22_0.1_300)] border border-[oklch(0.78_0.16_75/0.3)] p-4">
         <h3 className="text-gold text-xs uppercase tracking-widest mb-2">Výplaty (3 stejné × sázka)</h3>
-        <div className="grid grid-cols-4 sm:grid-cols-7 gap-2">
+        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-11 gap-2">
           {SYMBOLS.map((s) => (
             <div key={s.key} className="flex flex-col items-center gap-0.5 p-1.5 rounded-lg bg-black/30">
               <img src={s.img} alt={s.name} className="w-9 h-9 object-contain" />

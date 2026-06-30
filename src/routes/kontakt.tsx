@@ -21,7 +21,7 @@ function ContactPage() {
     <InfoPage title="Kontakt">
       <p>
         Potřebujete pomoc? Napište nám na{" "}
-        <a href="mailto:support@sakuraova-stestena.cz">support@sakuraova-stestena.cz</a>.
+        <a href="mailto:support@sakurahry.cz">support@sakurahry.cz</a>.
         Odpovídáme zpravidla do <strong>24–48 hodin</strong>.
       </p>
       <form onSubmit={submit} className="space-y-4 mt-6 not-prose">
